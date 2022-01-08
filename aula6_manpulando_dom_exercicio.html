@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Aula 6 -exercicio manipulando DOM</title>
+		<link rel="stylesheet" href="">
+	</head>
+	<body>
+
+		<input id="campo" type="text" placeholder="Digite algo:" onfocus="modificaFundo()" onblur="verificaResultado()">
+
+
+		<script>
+			
+			/* 1) Crie um campo <input type="text"> e aplique os seguintes controles com base nos 
+				eventos abaixo:
+				• No evento de foco modifique o background do input para amarelo.
+				• Quando o campo perder o foco, recupere o seu respectivo valor e:
+				o Caso o conteúdo contido no campo tenha menos de 3 caracteres o mesmo 
+				deve ter seu background alterado para vermelho.
+				o Caso o conteúdo contido no campo tenha 3 caracteres ou mais o background 
+				deve ser alterado para verde.
+
+			 */
+			
+			function modificaFundo(){
+				document.getElementById("campo").style.background = "yellow";
+			}
+
+			function verificaResultado(){
+
+				//recuperar valor do campo 
+				var resultado = document.getElementById("campo").value;
+
+				//modificar a cor do campo com base no resultado verificado
+				if ( resultado.length < 3 ) {
+					document.getElementById( "campo" ).style.background = "red";
+				} else {
+					document.getElementById( "campo" ).style.background = "green";
+						
+				}
+				
+			}
+
+		</script>
+		
+	</body>
+</html>
